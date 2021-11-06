@@ -8,7 +8,7 @@ const routes = (app) => {
                 res.send('GET request successful!'))
             //create post request
             //.post(addNewRecipe);
-            .POST((req, res) =>
+            .post((req, res) =>
                 res.send('POST request successful!'))
         // create a new route so you can get these donation entries by their ID's
         app.route('/recipes/:recipeID')

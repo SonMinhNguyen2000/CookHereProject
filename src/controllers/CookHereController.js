@@ -1,14 +1,23 @@
 import mongoose from 'mongoose';
-import { DonationSchema } from '../models/CookHereModel';
+import { RecipeSchema } from '../models/CookHereModel';
 
-const Donation = mongoose.model('Donations', DonationSchema);
+const Recipe  = mongoose.model('Recipes', RecipeSchema);
 
-export const addNewDonation = (req, res) => {
-    let newDonation = new Donation(req.body);
-    newDonation.save((err, donation) => {
+export const addNewRecipe = (req, res) => {
+    let newRecipe = new Recipe({
+        title : 'Creme Brulee',
+        description : 'also known as burned cream',
+        instruction : 'add sugar...',
+        username : 'user123',
+        category : 'Dessert'
+    });
+    newRecipe.save((err, recipe) => {
         if (err){
-            res.send(err)
+            res.send(err);
+            console.log("Error");
         }
-        res.json(donation)
+        console.log("Success");
+        res.json(recipe);
     })
+
 }

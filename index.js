@@ -1,6 +1,7 @@
 import routes from './src/routes/CookHereRoutes';
 import express from 'express';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 
 
 const app = express();
@@ -14,6 +15,15 @@ app.listen(PORT, () =>
 routes(app);
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/cookheredb', { useNewUrlParser: true, useUnifiedTopology : true })
+mongoose.connect('mongodb+srv://matt:canada1@cluster0.gxf1a.mongodb.net/CookHere?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology : true })
+//.then(() => 'You are now connected to Mongo!')
+//.catch(err => console.error('Something went wrong', err))
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+
+db.once("open", function() {
+  console.log("Connection Successful!");
+});
+
 app.use(express.urlencoded({ extended : true}));
 app.use(express.json());

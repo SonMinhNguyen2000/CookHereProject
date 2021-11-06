@@ -19,5 +19,42 @@ export const addNewRecipe = (req, res) => {
         console.log("Success");
         res.json(recipe);
     })
+}
 
+export const getRecipes = (req,res) => {
+    Recipe.find({}, (err, recipe) => {
+      if (err) {
+        res.send(err)
+      }
+      res.json(recipe)
+    })
+}
+ 
+export const getRecipeWithID = (req,res) => {
+    Recipe.findById(req.params.recipeID, (err, recipe) => {
+      if (err) {
+        res.send(err)
+        console.log('asdaasdsa')
+      }
+      res.json(recipe)
+    })
+}
+
+export const updateRecipe = (req,res) => {
+  Recipe.findOneAndUpdate({ _id: req.params.recipeID }, req.body, { new: true, useFindAndModify: false }, (err, recipe) => {
+    if (err) {
+      res.send(err)
+    }
+    res.json(recipe)
+  })
+}
+
+export const deleteRecipe = (req,res) => {
+  Recipe.findOneAndDelete({ _id: req.params.recipeID }, (err, recipe) => {
+    if (err) {
+      res.send(err);
+      console.log("asdsa");
+    }
+    res.json({message: "deleted recipe"})
+    })
 }

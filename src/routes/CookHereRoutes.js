@@ -1,23 +1,20 @@
-import { addNewRecipe } from "../controllers/CookHereController";
+import { addNewRecipe, getRecipes, getRecipeWithID, updateRecipe, deleteRecipe } from "../controllers/CookHereController";
 
 const routes = (app) => {
         //create route for donations
         app.route('/recipes')
             //create get request
-            .get((req, res) =>
-                res.send('GET request successful!'))
+            .get(getRecipes)
             //create post request
-            //.post(addNewRecipe);
-            .post((req, res) =>
-                res.send('POST request successful!'))
+            .post(addNewRecipe);
         // create a new route so you can get these donation entries by their ID's
         app.route('/recipes/:recipeID')
+            // create get request
+            .get(getRecipeWithID)
             //create put request
-            .put((req, res) =>
-                res.send('PUT request successful!'))
+            .put(updateRecipe)
             //create delete request
-            .delete((req, res) =>
-                res.send('DELETE request successful'));
+            .delete(deleteRecipe);
     }
     // export it!
 export default routes;

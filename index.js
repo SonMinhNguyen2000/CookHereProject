@@ -16,6 +16,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://matt:canada1@cluster0.gxf1a.mongodb.net/CookHere?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology : true })
 //.then(() => 'You are now connected to Mongo!')
 //.catch(err => console.error('Something went wrong', err))
+mongoose.set('debug', true);
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 

@@ -1,3 +1,5 @@
+import { addNewDonation } from "../controllers/CookHereController";
+
 const routes = (app) => {
         //create route for donations
         app.route('/donations')
@@ -5,8 +7,7 @@ const routes = (app) => {
             .get((req, res) =>
                 res.send('GET request successful!'))
             //create post request
-            .post((req, res) =>
-                res.set('POST request successful!'));
+            .post(addNewDonation)
         // create a new route so you can get these donation entries by their ID's
         app.route('/donations/:donationID')
             //create put request

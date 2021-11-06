@@ -1,8 +1,6 @@
 import routes from './src/routes/CookHereRoutes';
 import express from 'express';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-
 
 const app = express();
 const PORT = 4000;

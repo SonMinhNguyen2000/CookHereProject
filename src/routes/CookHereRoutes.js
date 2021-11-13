@@ -4,7 +4,7 @@ const routes = (app) => {
         //create route for donations
         app.route('/recipes')
             //create get request
-            .get(getRecipes)
+            .get(getAllRecipes)
             //create post request
             .post(addNewRecipe);
         // create a new route so you can get these donation entries by their ID's

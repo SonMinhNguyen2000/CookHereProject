@@ -55,7 +55,7 @@ export const UserSchema = new Schema ({
         trim : true,
         lowercase : true,
     },
-    pasword: {
+    password: {
         type : String,
         required : "Enter Password",
         trim : true

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { RecipeSchema } from '../models/CookHereModel';
+import { RecipeSchema, UserSchema } from '../models/CookHereModel';
 
 
 // title : 'Creme Brulee',

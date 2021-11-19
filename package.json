@@ -1,0 +1,23 @@
+{
+  "name": "cookhereproject",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "cd frontend && npm install && cd ../backend && npm install",
+    "start": "npm run postinstall && concurrently \"npm start --prefix frontend \" \"npm start --prefix backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonMinhNguyen2000/CookHereProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonMinhNguyen2000/CookHereProject/issues"
+  },
+  "homepage": "https://github.com/SonMinhNguyen2000/CookHereProject#readme",
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "postinstall": "^0.7.4"
+  }
+}

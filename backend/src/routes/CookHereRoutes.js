@@ -1,4 +1,10 @@
-import { addNewRecipe, getRecipes, getRecipeWithID, updateRecipe, deleteRecipe } from "../controllers/CookHereController";
+import {
+  addNewRecipe,
+  getAllRecipes,
+  getRecipeWithID,
+  updateRecipe,
+  deleteRecipe,
+} from "../controllers/CookHereController";
 
 const routes = (app) => {
         //create route for donations

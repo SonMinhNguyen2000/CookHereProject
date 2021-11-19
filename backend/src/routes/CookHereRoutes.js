@@ -4,7 +4,7 @@ import {
   getRecipeWithID,
   updateRecipe,
   deleteRecipe,
-} from "../controllers/CookHereController";
+} from "../controllers/RecipeController";
 
 const routes = (app) => {
         //create route for donations

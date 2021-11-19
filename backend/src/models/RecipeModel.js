@@ -24,40 +24,14 @@ export const RecipeSchema = new Schema ({
     },
     category : {
         type : String
-    }
-    // TODO
-    /* image : {
-        type : String
     },
+    // TODO
+    image : {
+        type : String
+    }
+    /*
     comment : {
         type : String
     } */
 })
 
-export const UserSchema = new Schema ({
-    firstName : {
-        type : String, 
-        required : "Enter First Name" 
-        },
-    lastName : {
-         type : String,
-         required : "Enter Last Name"
-    },
-    username : {
-        type : String,
-        required : "Enter Username",
-        unique : true
-    },
-    email : {
-        type : String,
-        required : "Enter Email Address",
-        unique : true,
-        trim : true,
-        lowercase : true,
-    },
-    password: {
-        type : String,
-        required : "Enter Password",
-        trim : true
-    },
-})

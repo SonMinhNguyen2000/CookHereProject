@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "postinstall": "cd frontend && npm install && cd ../backend && npm install",
-    "start": "npm run postinstall && concurrently \"npm start --prefix frontend \" \"npm start --prefix backend\""
+    "start": "concurrently \"npm start --prefix frontend \" \"npm start --prefix backend\""
   },
   "repository": {
     "type": "git",

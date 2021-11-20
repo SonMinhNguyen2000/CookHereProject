@@ -1,4 +1,5 @@
-import routes from './src/routes/CookHereRoutes';
+import recipeRoutes from './src/routes/RecipeRoutes';
+import userRoutes from './src/routes/UserRoutes';
 import express from 'express';
 import mongoose from 'mongoose';
 
@@ -10,7 +11,8 @@ app.get('/', (req, res) =>
 app.listen(PORT, () =>
     console.log(`Your server is running on port ${PORT}`))
 
-routes(app);
+recipeRoutes(app);
+userRoutes(app);
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://matt:canada1@cluster0.gxf1a.mongodb.net/CookHere?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology : true })

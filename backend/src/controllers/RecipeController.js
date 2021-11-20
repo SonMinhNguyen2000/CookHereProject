@@ -32,49 +32,15 @@ export const getAllRecipes = (req,res) => {
     })
 }
 
-export const getBreakfastRecipes = (req,res) => {
-  Recipe.find({category : "Breakfast"}, (err, recipe) => {
+export const getCategoryRecipes = (req, res) => {
+  Recipe.find({ category: req.params.categoryName }, (err, recipe) => {
     if (err) {
-      res.send(err)
+      res.send(err);
+    } else {
+      res.json(recipe);
     }
-    else{
-      res.json(recipe)
-    }     
-  })
-}
-
-export const getLunchRecipes = (req,res) => {
-  Recipe.find({category : "Lunch"}, (err, recipe) => {
-    if (err) {
-      res.send(err)
-    }
-    else{
-      res.json(recipe)
-    }     
-  })
-}
-
-export const getDinnerRecipes = (req,res) => {
-  Recipe.find({category : "Dinner"}, (err, recipe) => {
-    if (err) {
-      res.send(err)
-    }
-    else{
-      res.json(recipe)
-    }     
-  })
-}
-
-export const getDessertRecipes = (req,res) => {
-  Recipe.find({category : "Dessert"}, (err, recipe) => {
-    if (err) {
-      res.send(err)
-    }
-    else{
-      res.json(recipe)
-    }     
-  })
-}
+  });
+};
 
 export const getUserRecipes = (req,res) => {
   Recipe.find({username : req.params.username}, (err, recipe) => {
@@ -120,5 +86,6 @@ export const deleteRecipe = (req,res) => {
     }
     })
 }
+
 
 

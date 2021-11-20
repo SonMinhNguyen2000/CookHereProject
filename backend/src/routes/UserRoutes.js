@@ -10,9 +10,9 @@ const routes = (app) => {
     //get user info route
     app.route("/user/:userID")
        .post(controller.getUserWithID);
-    //for testing only
-    app.route("/user")
-       .get(controller.getAllUser);
+   //  //for testing only
+   //  app.route("/user")
+   //     .get(controller.getAllUser);
 }
 
 export default routes;

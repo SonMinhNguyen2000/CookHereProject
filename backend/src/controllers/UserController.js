@@ -59,12 +59,12 @@ export const getUserWithID = (req,res) => {
     })
 }
 
-export const getAllUser = (req, res) => {
-  User.find({}, (err, user) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(user);
-    }
-  });
-}
+// export const getAllUser = (req, res) => {
+//   User.find({}, (err, user) => {
+//     if (err) {
+//       res.send(err);
+//     } else {
+//       res.json(user);
+//     }
+//   });
+// }

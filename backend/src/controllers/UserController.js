@@ -6,10 +6,10 @@ const User  = mongoose.model('Users', UserSchema);
 export const getUserWithPWD = (req,res) => {
   User.findOne({ $and: [{ username: req.body.username }, { password : req.body.password }] }, (err, user) => {
     if (err) {
-      res.send(err)
+      res.json({success: false, error : err});
     }
     else {
-      res.json(user)
+      res.json({success: true, result : user});
     }
   })
 }
@@ -18,10 +18,10 @@ export const addNewUser = (req, res) => {
   let newUser = new User(req.body);
   newUser.save((err, user) => {
       if (err){
-          res.send(err);
+          res.json({success: false, error : err});
       }
       else{
-        res.json({message : "Successfuly Added User"});
+        res.json({success: true, result: user, message : "Successfuly Added User"});
       }     
   })
 }
@@ -29,10 +29,10 @@ export const addNewUser = (req, res) => {
 export const deleteUser = (req,res) => {
   User.findOneAndDelete({ username : req.params.username }, (err, user) => {
     if (err) {
-      res.send(err);      
+      res.json({success: false, error : err});      
     }
     else {
-      res.json({message: "Successfuly Deleted User"})
+      res.json({success: true, message: "Successfuly Deleted User"});
     }
     })
 }
@@ -40,10 +40,10 @@ export const deleteUser = (req,res) => {
 export const getUserWithUsername = (req,res) => {
   User.findOne(req.params.username, (err, user) => {
     if (err) {
-      res.send(err)
+      res.json({success: false, error : err});
     }
     else {
-      res.json(user)
+      res.json({success: true, result : user});
     }
   })
 }
@@ -51,10 +51,10 @@ export const getUserWithUsername = (req,res) => {
 export const getUserWithID = (req,res) => {
   User.findById(req.params.userID, (err, user) => {
     if (err) {
-      res.send(err)
+      res.json({success: false, error : err});
     }
     else{
-      res.json(user)
+      res.json({success: true, result : user});
     }
     })
 }

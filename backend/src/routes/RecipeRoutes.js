@@ -16,6 +16,8 @@ const routes = (app) => {
         //get user recipe route
         app.route('/recipes/user/:username')
             .get(controller.getUserRecipes);
+        app.route('/recipe/user/:username/:recipeID')
+            .get(controller.getAUserRecipe);    
         //get recipe from category routes
         app.route('/recipes/category/:categoryName')
             .get(controller.getCategoryRecipes);   

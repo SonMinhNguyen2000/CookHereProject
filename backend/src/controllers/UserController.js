@@ -4,7 +4,7 @@ import { UserSchema } from '../models/UserModel';
 const User  = mongoose.model('Users', UserSchema);
 
 export const getUserWithPWD = (req,res) => {
-  User.findOne({ $and: [{ username: req.body.username }, { password : req.body.password }] }, (err, user) => {
+  User.findOne({username: req.body.username, password : req.body.password}, (err, user) => {
     if (err) {
       res.json({success: false, error : err});
     }
@@ -17,12 +17,12 @@ export const getUserWithPWD = (req,res) => {
 export const addNewUser = (req, res) => {   
   let newUser = new User(req.body);
   newUser.save((err, user) => {
-      if (err){
-          res.json({success: false, error : err});
-      }
-      else{
-        res.json({success: true, result: user, message : "Successfuly Added User"});
-      }     
+    if (err){
+        res.json({success: false, error : err});
+    }
+    else{
+      res.json({success: true, result: user, message : "Successfuly Added User"});
+    }     
   })
 }
 

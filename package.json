@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "postinstall": "cd frontend && npm install && cd ../backend && npm install",
-    "start": "concurrently \"npm start --prefix frontend \" \"npm start --prefix backend\""
+    "startdev": "concurrently \"npm start --prefix frontend \" \"npm run startdev --prefix backend\"",
+    "startprod": "concurrently \"npm start --prefix frontend \" \"npm run startprod --prefix backend\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/SonMinhNguyen2000/CookHereProject#readme",
   "dependencies": {
     "concurrently": "^6.4.0",
+    "draftjs-to-html": "^0.9.1",
     "postinstall": "^0.7.4"
   }
 }

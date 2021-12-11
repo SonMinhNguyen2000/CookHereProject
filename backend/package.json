@@ -4,20 +4,29 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon ./index.js --exec babel-node -e js"
+        "startdev": "env-cmd -e dev nodemon index.js --exec babel-node -e js",
+        "startprod": "env-cmd -e prod nodemon index.js --exec babel-node -e js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "body-parser": "^1.19.0",
+        "bcrypt": "^5.0.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
         "express": "^4.17.1",
-        "mongodb": "^4.1.4",
+        "express-rate-limit": "^5.5.1",
+        "joi": "^17.5.0",
+        "jsonwebtoken": "^8.5.1",
+        "moment": "^2.29.1",
         "mongoose": "^6.0.12",
-        "nodemon": "^2.0.14"
+        "nodemailer": "^6.7.2",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
-        "babel-preset-stage-0": "^6.24.1"
+        "babel-preset-stage-0": "^6.24.1",
+        "env-cmd": "^10.1.0",
+        "nodemon": "^2.0.15"
     }
 }

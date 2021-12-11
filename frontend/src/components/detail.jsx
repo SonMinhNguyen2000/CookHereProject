@@ -26,7 +26,7 @@ const Detail = () => {
                     <div className={"col-5"}>
                         <img src={data.image} className={"image-fluid rounded-3 w-100"} alt={data.title} />
                         <h1 className={"h3 fw-bolder mt-3"}>Ingredients:</h1>
-                        <div style={{whiteSpace: "pre-line p-1", fontSize:"21px"}}>
+                        <div style={{whiteSpace: "pre", fontSize:"21px"}} className={"p-1"}>
                             {parse(data.ingredients)}
                         </div>
                     </div>

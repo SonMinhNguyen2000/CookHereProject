@@ -4,6 +4,8 @@ import Profile from "./components/profile";
 import Home from "./components/home";
 import Detail from "./components/detail";
 import RecipeForm from "./components/RecipeForm";
+import {useEffect} from 'react';
+import axios from 'axios';
 import {
   BrowserRouter as Router,
   Routes,
@@ -83,28 +85,29 @@ const App = () => {
   );
 };
 
-// useEffect(()=>{
-//     const spoon = async()=>{
-//         let test = await axios.get(
-//             "https://api.spoonacular.com/recipes/random?apiKey=6c6f079794cf49ac82f55aa0687f966c&type?breakfast=true"
-//         )
-//         const stringIngredient =
-//             "- " +
-//             test.data.recipes[0].extendedIngredients
-//                 .map((i) => i.name)
-//                 .join("\n- ");
-//         const newRecipe = {
-//             title: test.data.recipes[0].title,
-//             description: test.data.recipes[0].summary,
-//             ingredients: stringIngredient,
-//             instruction: test.data.recipes[0].instructions,
-//             username: "YukitoMinori",
-//             category: "breakfast",
-//             image: test.data.recipes[0].image,
-//         };
-//         axios.post("/api/recipes", newRecipe).then(res=>console.log(res)).catch(err=>console.log(err))
-//     }
-//     spoon()
-// },[])
+//useEffect(()=>{
+    //     const spoon = async()=>{
+    //         let test = await axios.get(
+    //             "https://api.spoonacular.com/recipes/random?apiKey=6c6f079794cf49ac82f55aa0687f966c&type?dessert"
+    //         )
+    //         const stringIngredient =
+    //             "- " +
+    //             test.data.recipes[0].extendedIngredients
+    //                 .map((i) => i.name)
+    //                 .join("\n- ");
+    //         const newRecipe = {
+    //             title: test.data.recipes[0].title,
+    //             description: test.data.recipes[0].summary,
+    //             ingredients: stringIngredient,
+    //             instruction: test.data.recipes[0].instructions,
+    //             username: "YukitoMinori",
+    //             category: "dessert",
+    //             image: test.data.recipes[0].image,
+    //         };
+    //         axios.post("/api/recipes", newRecipe).then(res=>console.log(res)).catch(err=>console.log(err))
+    //     }
+    //     spoon()
+    // },[])
+
 
 export default App;

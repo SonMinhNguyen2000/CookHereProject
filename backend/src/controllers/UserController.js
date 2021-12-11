@@ -228,7 +228,7 @@ const sendEmailConfirmation = async({email,username,emailToken}) => {
     to: email,
     subject: "Confirm Your Email",
     html: `<p>Click the link to confirm your email:</p>
-    <a>http://localhost:4000/api/auth/emailConfirmation/${username}/${emailToken}</a>`,
+    <a>http://localhost:${process.env.PORT}/api/auth/emailConfirmation/${username}/${emailToken}</a>`,
   });
 }                                        
 

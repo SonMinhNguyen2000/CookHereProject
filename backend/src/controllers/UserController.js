@@ -27,7 +27,7 @@ const register = async(req, res) => {
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
       const user = new User({
-        username:req.body.username, 
+        username:req.body.username.split(' ').join(''), 
         email: req.body.email,
         password:hashedPassword,
         emailConfirmed: false, 

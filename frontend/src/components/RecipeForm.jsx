@@ -38,6 +38,7 @@ const RecipeForm = () => {
   },[currRecipe])
 
   useEffect(()=>{
+    //set image to preview if preview is there after click update
     if (preview) {
       setImage(preview)
     }
